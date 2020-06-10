@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+<head>
+  <title>jacob's world</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!--<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script> 
+  <script> module.exports = AFRAME.registerComponent('gltf-model-legacy', {
+  schema: {type: 'model'},.
+          ></script>
+
+  <script>
+      AFRAME.registerComponent('play', {
+        init: function () {
+          var myEl = document.querySelector('#playbox1');
+          
+          this.el.addEventListener('click', function () {
+            myEl.components.sound.playSound();  
+          });
+        }
+      });
+       AFRAME.registerComponent('stop', {
+        init: function () {
+          var myEl = document.querySelector('#playbox1');
+          
+          this.el.addEventListener('click', function () {
+            myEl.components.sound.stopSound();  
+          });        
+        }  
+      });
+    AFRAME.registerComponent('play2', {
+        init: function () {
+          var myEl = document.querySelector('#boxsound2');
+          
+          this.el.addEventListener('click', function () {
+            myEl.components.sound.playSound();  
+          });        
+        }  
+      });
+     AFRAME.registerComponent('stop2', {
+        init: function () {
+          var myEl = document.querySelector('#boxsound2');
+          
+          this.el.addEventListener('click', function () {
+            myEl.components.sound.stopSound();  
+          });        
+        }  
+      });
+     AFRAME.registerComponent('play3', {
+        init: function () {
+          var myEl = document.querySelector('#playbox3');
+          
+          this.el.addEventListener('click', function () {
+            myEl.components.sound.playSound();  
+          });
+        }
+      });
+       AFRAME.registerComponent('stop3', {
+        init: function () {
+          var myEl = document.querySelector('#playbox3');
+          
+          this.el.addEventListener('click', function () {
+            myEl.components.sound.stopSound();  
+          });        
+        }  
+      });
+         AFRAME.registerComponent('play4', {
+        init: function () {
+          var myEl = document.querySelector('#playbox4');
+          
+          this.el.addEventListener('click', function () {
+            myEl.components.sound.playSound();  
+          });
+        }
+      });
+       AFRAME.registerComponent('stop4', {
+        init: function () {
+          var myEl = document.querySelector('#playbox4');
+          
+          this.el.addEventListener('click', function () {
+            myEl.components.sound.stopSound();  
+          });        
+        }  
+      });
+    </script> 
+  <script>
+  AFRAME.registerComponent('textsee', {
+    init: function() {
+      this.el.addEventListener('mouseenter', (e) => {
+        this.el.children[0].setAttribute('visible', 'true');
+      })
+      this.el.addEventListener('mouseleave', (e) => {
+        this.el.children[0].setAttribute('visible', 'false');
+      })
+    }
+  })
+
+</script>
+
+  </head>
+
+<body>
+  <a-scene>
+    <!--The Assets-->
+    <a-assets>
+        <a-asset-item id="home-ply" src="models/home.ply"></a-asset-item>
+        <img id="sky" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2F15667611984_6ec824cb14_6k.jpg?v=1589189910319">
+        <img id="farm" src="img/farm.png">
+        <img id="forest" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FWald_in_Ellmau_am_Wilden_Kaiser%2C_Tirol%2C_360x180%2C_160620%2C_ako.jpg?v=1589333157887" preload="true">
+        <img id="home" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2F7509951182_823a3975cd_o.jpg?v=1589768358792">
+        <img id="bog" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2F31571656074_5b8a69ecd3_o.jpg?v=1589785177760">
+      <img id="crow" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2F24284277792_dfdabe9f98_o2.png?v=1589782476728">
+        <audio id="birds" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FForest-ambience.mp3?v=1589334575816" preload="auto"></audio>
+        <audio id="pines" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FWind%20In%20Pine%20Trees%20-%20Sound%20Effect.mp3?v=1589501335125"></audio>
+        <audio id="springbirds" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FJune_Songbirds.mp3?v=1589767548196" preload="auto"></audio>
+      <audio id="Yoshimura" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2F01%20Wet%20Land.mp3?v=1589778729133" preload="auto" ></audio>
+      <audio id="wind" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FWindy_Forrest.mp3?v=1589783588684" preload="auto" ></audio>
+      <audio id="creek" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FSmall_Stream_Flowing.mp3?v=1590001436143" preload="auto" ></audio>
+      <video id="video1" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FMy%20Movie2.mp4?v=1590110667377" ></video>
+      <video id="watermov" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2Fezgif-3-b268daddc1f0.mp4?v=1591414423142" autoplay="true" loop="true"></video>
+      <img id="diagram" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2Fshinrin.jpg?v=1590725252164">
+      <a-asset-item id="3Dbird" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2Fout.glb?v=1591227502579" response-type="arraybuffer"></a-asset-item>
+      <img id="rocks" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FTexturesCom_NorwayForest_8K_hdri_sphere_tone.jpg?v=1591232735233">
+
+      
+    </a-assets>
+    
+
+    <!--The placement of model-->   
+   
+    
+    <a-entity
+        id="camera"
+        camera position="0 .5 10 
+              userHeight: 1"
+        look-controls
+        wasd-controls="acceleration: 50;
+                       easing: 40"
+        cursor="rayOrigin: mouse"           
+      ></a-entity>
+  <!-- raycaster="objects: .clickable" -->
+
+
+    <a-entity id="scene1"
+              sound="src:#Yoshimura; volume:.5; autoplay:true">
+      <a-sky src="#farm"></a-sky>
+      <a-text value="Please select a biosphere"
+              width="10"
+              height="2"
+              position="-2 1 0"></a-text>
+      <a-box color="red" position="-6 0 0" onclick="setSceneFarm()" play4> </a-box>
+      <a-box color="yellow" position="-2 0 0" onclick="setSceneStore()" play> </a-box>
+      <a-box color="blue" position="2 0 0" onclick="setSceneMeeting()" play2> </a-box>
+      <a-box color="green" position="6 0 0" onclick="setSceneHome()" play3> </a-box>
+       <a-sphere color="lightblue" position="0 -1 -12" radius="10"  src="#crow" sphereexpand material="spherical-env-map: #sky; roughness:0; metalness:.9; opacity: .7"
+          animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+          ></a-sphere>
+       <a-entity gltf-model="#3Dbird" scale=".01 .01 .01" position="-7.41911 6.09801 -1.43004" 
+                           animation="property: rotation; to: 360 360 360; easing: linear; dur: 15000; loop: true"  material="color: red"
+                 
+></a-entity>
+     <!-- <a-torus-knot src="#forest" arc="180" p="7" q="7" radius="5" position="0 7 9" radius-tubular="2"></a-torus-knot> -->
+
+
+      
+   </a-entity>
+    
+
+   <a-entity id="sceneFarm" visible="false">
+   	<a-sky src="#sky"></a-sky>
+   	<a-box id="playbox4" color="white" position="0 0 0" sound="src:#wind; volume:8" stop4 onclick="setScene1()"></a-box>
+          <!-- <a-sphere src="#farm" height="3.0" radius="5.7" theta-length="72"                  
+                 rotation="0 100 0" scale="0.8 0.8 0.8"></a-sphere> -->
+         <a-sphere position="12 8 1" radius="5" rotation="0 0 0" transparent="false" text="value: hello wollld;" material="spherical-env-map: #sky; roughness:0; metalness:1; opacity: .5" 
+sound="src:#creek; volume: 4; on: click" 
+              animation="property: position;
+                         to: 0 11 0;
+                         dir: alternate;
+                         loop: true;
+                         dur: 70000" ></a-sphere>
+     <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+        <a-sphere position="5 0 0" color="mediumseagreen"></a-sphere>
+</a-entity>
+
+        </a-entity>
+     
+     
+   <a-entity id="sceneStore" visible="false">
+           <a-sky src="#forest"></a-sky>
+      <a-text
+        font="kelsonsans"
+        value="Sinrin Yoku is a traditional Japanese practice of immersing oneself 
+              in nature by mindfully using all five senses. During the 1980s, SY surfaced 
+              in Japan as a pivotal part of preventive health care and healing in Japanese medicine"
+        width="10"
+        position="-7 -4 6"
+        rotation="0 45 0"
+      ></a-text>
+      <a-box id="playbox1" position="8 0 0" sound="src:#birds" stop onclick="setScene1()"></a-box>
+   </a-entity>
+
+     
+   <a-entity id="sceneMeeting" visible="false">
+   	<a-sky src="#rocks"></a-sky>
+    <a-box id="boxsound2" position="8 2 0" sound="; volume: 2" stop2 onclick="setScene1()"></a-box>
+    <a-cylinder position="4 4 0" radius="0.5" height="1.5" color="#FFC65D"
+                  event-set__enter="_event: mouseenter; _target: #cylinderText; visible: true"
+                  event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false">
+    <a-text id="cylinderText" value="This is a cylinder" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
+                geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
+    </a-cylinder>
+     <a-entity geometry="primitive: circle; radius: 5" position="0 7 0" material="src:#video1; spherical-env-map: #rocks; roughness:0; metalness:.8; opacity: .7" 
+                animation="property: position;
+                         to: -15 7 -3;
+                         dir: alternate;
+                         loop: true;
+                         dur: 70000" onclick="playVid()" onmouseenter="pauseVid()" onmouseup="setHalfVolume()" look-at="#look">
+              </a-entity>
+
+      <!-- <a-entity look-at="#look" geometry="primitive: circle; radius: 5" material="src:#video1; color: lightpurple; roughness:0 ; opacity: .8"
+  ></a-entity> -->
+       
+     
+   <a-curvedimage src="#diagram" height="5" radius="5.7" theta-length="72" rotation="0 180 0" scale="2 4 0.8" material="color: #d7ffbd; thetaLength: 72" position="4 17.463 1"
+    event-set__enter="_event: mouseenter; visible: true"></a-curvedimage>
+     
+    <a-box id="look" position="0 7 10" visible="false" ></a-box>
+
+   </a-entity>
+
+     
+   <a-entity id="sceneHome" visible="false"> 
+   	<a-sky src="#home"></a-sky>
+     
+   	<a-box id="playbox3" position="-8 2 0" sound="src:#springbirds; volume: 35" stop3 onclick="setScene1()">           
+      <a-box position="-5 -2 0" sound="src:#creek; volume: 2; on:click"></a-box> 
+    </a-box>
+     
+     <a-entity>
+               <a-sphere id="textsphere" position="-12 8 11" radius="6" visible="false" opacity=".2" color="lightgreen" 
+                         material="src:#watermov; roughness:0; metalness:.1; opacity: .5; spherical-env-map: #home"
+                                     
+               event-set__enter="_event: mouseenter; _target: #textsphere; visible: true"
+               event-set__leave="_event: mouseleave; _target: #textsphere; visible: false"
+                         
+                         >
+                  <a-entity look-at="#camera"
+  geometry="primitive: plane; width: 5; height: 4"
+  material="opacity: .5; color: green; emissive: lightblue; emissiveintensity:9"
+  text="value: 
+(What do you see?)
+I see a key on the ground
+(What kind?)
+Just a key, but it's shining
+(Whatcha gonna do?)
+I wanna pick it up
+(What you say?);
+        color: orange;
+        
+        align: center;
+        wrapCount: 15"
+
+      ></a-entity>
+       </a-sphere>
+     </a-entity>
+         
+   </a-entity>
+    
+  </a-scene>
+  
+  <script>
+var vid = document.getElementById("watermov");
+vid.playbackRate = 0.6;
+</script> 
+  
+  
+  <script> 
+var vid = document.getElementById("video1"); 
+
+function playVid() { 
+  vid.play(); vid.volume=.1
+  
+} 
+
+function pauseVid() { 
+  vid.pause(); 
+} 
+    
+</script> 
+  
+
+
+  
+  <script type="text/javascript"> 
+  function setScene1() {
+    document.getElementById('scene1').setAttribute('visible', 'true')
+    document.getElementById('sceneFarm').setAttribute('visible', 'false')
+    document.getElementById('sceneStore').setAttribute('visible', 'false')
+    document.getElementById('sceneMeeting').setAttribute('visible', 'false')
+    document.getElementById('sceneHome').setAttribute('visible', 'false')
+  }
+   function setSceneFarm() {
+    document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('sceneFarm').setAttribute('visible', 'true')
+  }
+
+   function setSceneStore() {
+    document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('sceneStore').setAttribute('visible', 'true')
+  }
+
+   function setSceneMeeting() {
+    document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('sceneMeeting').setAttribute('visible', 'true')
+  }
+
+   function setSceneHome() {
+    document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('sceneHome').setAttribute('visible', 'true')
+  }
+  </script>
+
+</body>
+</html>
