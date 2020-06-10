@@ -119,7 +119,7 @@
       <audio id="wind" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FWindy_Forrest.mp3?v=1589783588684" preload="auto" ></audio>
       <audio id="creek" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FSmall_Stream_Flowing.mp3?v=1590001436143" preload="auto" ></audio>
       <video id="video1" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FMy%20Movie2.mp4?v=1590110667377" ></video>
-      <video id="watermov" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2Fezgif-3-b268daddc1f0.mp4?v=1591414423142" loop autoplay></video>
+      <video id="watermov" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2Fezgif-3-b268daddc1f0.mp4?v=1591414423142" loop="true" autoplay="true" preload="auto"></video>
       <img id="diagram" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2Fshinrin.jpg?v=1590725252164">
       <a-asset-item id="3Dbird" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2Fout.glb?v=1591227502579" response-type="arraybuffer"></a-asset-item>
       <img id="rocks" src="https://cdn.glitch.com/5924f043-490b-43e0-99a8-dd33a57575a5%2FTexturesCom_NorwayForest_8K_hdri_sphere_tone.jpg?v=1591232735233">
@@ -280,7 +280,7 @@ vid.playbackRate = 0.6;
 var vid = document.getElementById("video1"); 
 
 function playVid() { 
-  vid.play(); vid.volume=0.03;
+  vid.play(); vid.volume=0.03
   
 } 
 
